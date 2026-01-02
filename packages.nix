@@ -25,6 +25,7 @@
   nextcloud-client
   discord-canary
   firefox-gnome-theme
+  gimp
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
