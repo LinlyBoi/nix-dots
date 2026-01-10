@@ -98,7 +98,6 @@
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    vi-mode.enable = true;
 
     shellAliases = {
       ll = "ls -l";

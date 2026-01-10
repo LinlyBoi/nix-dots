@@ -26,6 +26,7 @@
   discord-canary
   firefox-gnome-theme
   gimp
+  less
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
