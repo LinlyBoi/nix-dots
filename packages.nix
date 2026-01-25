@@ -11,7 +11,7 @@
   vim
   wget
   ranger
-  mpv ffmpeg 
+  mpv ffmpeg
   adw-gtk3
   bitwarden-desktop
   chezmoi
@@ -20,13 +20,14 @@
   hledger
   supersonic
   libdrm
-  yt-dlp
+  yt-dlp freetube
   prismlauncher
   nextcloud-client
   discord-canary
   firefox-gnome-theme
   gimp
   less
+  unzip
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
