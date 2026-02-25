@@ -12,6 +12,7 @@
   cmake gnumake 
   trunk slumber
   nixfmt nil
+  jdk
   ];
   programs.direnv.enable = true;
 }
