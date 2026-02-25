@@ -13,6 +13,12 @@
   trunk slumber
   nixfmt nil
   jdk
+  shellcheck
+  ansible
+  glslang
+  pandoc
+  html-tidy
+  stylelint
   ];
   programs.direnv.enable = true;
 }

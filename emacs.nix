@@ -13,5 +13,7 @@
     zlib
     pkg-config
     libwebp
+    imagemagick
+    offlineimap
   ];
 }

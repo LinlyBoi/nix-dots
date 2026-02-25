@@ -40,6 +40,7 @@ nixpkgs.config = {
   man-pages
   man-pages-posix
   libreoffice-fresh
+  ledger
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
