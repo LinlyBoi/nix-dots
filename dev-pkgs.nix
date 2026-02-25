@@ -11,6 +11,7 @@
   rustup gcc go
   cmake gnumake 
   trunk slumber
+  nixfmt nil
   ];
   programs.direnv.enable = true;
 }
