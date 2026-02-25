@@ -3,7 +3,7 @@
 {
   
   environment.systemPackages = with pkgs; [
-    tdlib
+    unstable.tdlib
     emacsPackages.mu4e
     emacs
     ripgrep

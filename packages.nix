@@ -2,7 +2,14 @@
 
 {
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+nixpkgs.config = {
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      unstable = import <unstable> {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
 
 
   # List packages installed in system profile. To search, run:
@@ -28,6 +35,11 @@
   gimp
   less
   unzip
+  zip
+  file
+  man-pages
+  man-pages-posix
+  libreoffice-fresh
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
