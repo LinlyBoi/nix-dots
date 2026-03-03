@@ -44,5 +44,5 @@ nixpkgs.config = {
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
-  fonts.packages = with pkgs; [ miracode ];
+  fonts.packages = with pkgs; [ noto-fonts noto-fonts-cjk-sans miracode ];
 }
