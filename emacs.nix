@@ -10,7 +10,7 @@
   environment.systemPackages = with pkgs; [
     unstable.tdlib
     emacsPackages.mu4e
-    emacs
+    emacs-pgtk
     ripgrep
     coreutils
     fd
