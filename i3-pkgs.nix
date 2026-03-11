@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  
+
   environment.systemPackages = with pkgs; [
     dunst
-    flameshot 
+    flameshot
     wezterm
     rofi
     playerctl

@@ -5,14 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./packages.nix
-      ./emacs.nix
-      ./laptop.nix
-      ./dev-pkgs.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./packages.nix
+    ./emacs.nix
+    ./laptop.nix
+    ./dev-pkgs.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -29,9 +29,9 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   nix.gc = {
-	  automatic = true;
-	  dates = "daily";   # or "daily"
-	  options = "--delete-older-than 2";
+    automatic = true;
+    dates = "daily"; # or "daily"
+    options = "--delete-older-than 2";
   };
   # Enable networking
   networking.networkmanager.enable = true;
@@ -57,8 +57,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -79,7 +77,10 @@
   users.users.linly = {
     isNormalUser = true;
     description = "Aly Sewelam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Install firefox.

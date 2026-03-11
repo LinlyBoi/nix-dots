@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
-  zathura
-  wezterm
-  pwvucontrol
-  playerctl 
+    zathura
+    wezterm
+    pwvucontrol
+    playerctl
   ];
 }
