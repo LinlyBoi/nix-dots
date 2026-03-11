@@ -24,7 +24,7 @@
     nixfmt
     nil
     jdk
-    clangd
+    clang-tools
     shellcheck
     ansible
     glslang
