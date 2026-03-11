@@ -87,6 +87,10 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -94,6 +98,7 @@
     variant = "";
     options = "caps:escape";
   };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -111,6 +116,9 @@
     setOptions = [
       "HIST_IGNORE_ALL_DUPS"
     ];
+  interactiveShellInit = ''
+    source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+  '';
   };
   users.defaultUserShell = pkgs.zsh;
   services.tailscale.enable = true;
