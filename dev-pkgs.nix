@@ -23,7 +23,7 @@
     slumber
     nixfmt
     nil
-    jdk
+    jdk25_headless
     clang-tools
     shellcheck
     ansible
