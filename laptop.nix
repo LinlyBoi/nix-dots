@@ -21,7 +21,6 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.just-perfection
     gnomeExtensions.caffeine
-    gradience
   ];
   programs.dconf.profiles.user.databases = [
     {
