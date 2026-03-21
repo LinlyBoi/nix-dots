@@ -21,6 +21,8 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.just-perfection
     gnomeExtensions.caffeine
+    adw-gtk3
+    gnome-tweaks
   ];
   programs.dconf.profiles.user.databases = [
     {
