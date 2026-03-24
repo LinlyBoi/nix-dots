@@ -20,6 +20,7 @@
   '';
   environment.systemPackages = with pkgs; [
     gnomeExtensions.just-perfection
+    gnomeExtensions.user-themes
     gnomeExtensions.caffeine
     adw-gtk3
     gnome-tweaks
