@@ -9,6 +9,8 @@
 
   environment.systemPackages = with pkgs; [
     unstable.tdlib
+    libtool
+    libvterm
     emacsPackages.mu4e
     emacs-pgtk
     ripgrep
