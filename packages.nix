@@ -39,6 +39,7 @@
     discord-canary
     firefox-gnome-theme
     gimp
+    unstable.krita
     less
     unzip
     zip
@@ -54,5 +55,6 @@
     noto-fonts
     noto-fonts-cjk-sans
     miracode
+    rubik
   ];
 }
