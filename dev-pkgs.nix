@@ -26,6 +26,7 @@
     jdk25_headless
     clang-tools
     shellcheck
+    jdt-language-server
     ansible
     glslang
     pandoc

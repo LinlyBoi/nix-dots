@@ -38,6 +38,7 @@
     nextcloud-client
     discord-canary
     firefox-gnome-theme
+    chromium
     gimp
     unstable.krita
     less
@@ -48,6 +49,7 @@
     man-pages-posix
     libreoffice-fresh
     ledger
+    xournalpp
   ];
   programs.steam.enable = true;
   programs.firefox.enable = true;
@@ -57,4 +59,12 @@
     miracode
     rubik
   ];
+  programs.chromium = {
+    enable = true;
+    extraOpts = {
+      "BrowserSignin" = 0;
+      "SyncDisabled" = true;
+      "PasswordManagerEnabled" = false;
+    };
+  };
 }
