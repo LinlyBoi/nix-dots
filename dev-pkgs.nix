@@ -11,6 +11,7 @@
   };
   environment.systemPackages = with pkgs; [
     opencode
+    zed-editor
     python315
     graphviz
     texliveFull
