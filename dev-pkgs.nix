@@ -11,7 +11,8 @@
   };
   environment.systemPackages = with pkgs; [
     opencode
-    zed-editor
+    unstable.zed-editor
+    unstable.godot # until stable channel has 4.6.2
     python315
     graphviz
     texliveFull
