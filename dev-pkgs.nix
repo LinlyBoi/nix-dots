@@ -34,6 +34,7 @@
     pandoc
     html-tidy
     stylelint
+    tea
   ];
   programs.direnv.enable = true;
 }
