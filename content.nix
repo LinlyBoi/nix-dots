@@ -42,8 +42,8 @@
   services.pipewire.jack.enable = true;
   programs.obs-studio = {
     enable = true;
-
-    plugins = with pkgs.obs-studio-plugins; [
+    package = pkgs.unstable.obs-studio;
+    plugins = with pkgs.unstable.obs-studio-plugins; [
       wlrobs
       obs-backgroundremoval
       obs-pipewire-audio-capture
@@ -58,7 +58,7 @@
       input-overlay
       obs-aitum-multistream
       obs-dvd-screensaver
-      # obs-vertical-canvas # it broke :(
+      obs-vertical-canvas
     ];
   };
 }
