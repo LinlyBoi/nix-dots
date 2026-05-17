@@ -12,7 +12,7 @@
   hardware.logitech.wireless.enable = true;
   services.ratbagd.enable = true;
   environment.systemPackages = with pkgs; [
-    gsettings-desktop.schemas
+    gsettings-desktop-schemas
     zathura
     i3status
     grim
