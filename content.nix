@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     obs-cmd
     kdePackages.kdenlive
+    davinci-resolve
     reaper
     chatterino7
   ];
