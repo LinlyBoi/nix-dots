@@ -8,7 +8,6 @@
 {
  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
     extraPackages = with pkgs; [
         intel-compute-runtime
         intel-vaapi-driver
@@ -30,7 +29,7 @@ services.greetd = {
   services.fprintd.enable = true;
   # https://github.com/NixOS/nixpkgs/issues/149812
   environment.extraInit = ''
-    export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
+    export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
   '';
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
@@ -55,7 +54,4 @@ services.greetd = {
     brightnessctl
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.variables = {
-    XDG_DATA_DIRS = [ "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}" ];
-  };
 }
