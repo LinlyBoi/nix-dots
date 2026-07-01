@@ -18,6 +18,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -36,7 +39,8 @@
     freetube
     prismlauncher
     nextcloud-client
-    discord-canary
+    # discord-canary
+    vesktop
     firefox-gnome-theme
     chromium
     gimp
@@ -50,8 +54,12 @@
     libreoffice-fresh
     ledger
     xournalpp
+    ytfzf
   ];
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
   programs.firefox.enable = true;
   fonts.packages = with pkgs; [
     noto-fonts
