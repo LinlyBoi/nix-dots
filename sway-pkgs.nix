@@ -6,6 +6,15 @@
 }:
 
 {
+services.greetd = {                                                      
+  enable = true;                                                         
+  settings = {                                                           
+    default_session = {                                                  
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+      user = "greeter";                                                  
+    };                                                                   
+  };                                                                     
+};
   services.gnome.gnome-keyring.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -29,5 +38,23 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+  };
+  # xdg portal + pipewire = screensharing
+  xdg = {
+    portal = {
+      enable = true;
+      wlr = {
+        enable = true;
+        settings = {
+          screencast = {
+            chooser_type = "simple";
+            chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+          };
+        };
+      };
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
   };
 }
