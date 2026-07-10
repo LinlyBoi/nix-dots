@@ -8,7 +8,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    unstable.tdlib
+    tdlib
     libtool
     libvterm
     emacsPackages.mu4e
