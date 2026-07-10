@@ -74,4 +74,5 @@
       "PasswordManagerEnabled" = false;
     };
   };
+  services.cloudflare-warp.enable = true;
 }
