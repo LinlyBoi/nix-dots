@@ -54,6 +54,7 @@
     ledger
     xournalpp
     ytfzf
+    gnupg
   ];
   programs.steam = {
     enable = true;
