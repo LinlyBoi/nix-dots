@@ -23,5 +23,7 @@
     libwebp
     imagemagick
     offlineimap
+    mu
+    isync
   ];
 }
