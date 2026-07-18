@@ -54,6 +54,7 @@
     ledger
     xournalpp
     ytfzf
+    gnupg
   ];
   programs.steam = {
     enable = true;
@@ -74,4 +75,5 @@
       "PasswordManagerEnabled" = false;
     };
   };
+  services.cloudflare-warp.enable = true;
 }

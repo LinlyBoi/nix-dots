@@ -18,7 +18,7 @@ services.greetd = {
   enable = true;                                                         
   settings = {                                                           
     default_session = {                                                  
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri";
+      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
       user = "greeter";                                                  
     };                                                                   
   };                                                                     
@@ -52,9 +52,15 @@ services.greetd = {
     nautilus
     playerctl
     brightnessctl
+    wrapGAppsHook4
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-xdg.portal.config.niri = {
-  "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
-};
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
+    config.common.default = "*";
+  };
 }
