@@ -32,7 +32,7 @@
     darkman
     nextcloud-talk-desktop
     hledger
-    supersonic
+    supersonic aonsoku
     libdrm
     yt-dlp
     freetube
