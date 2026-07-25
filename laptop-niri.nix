@@ -44,6 +44,7 @@ services.greetd = {
     fuzzel
     swaylock
     mako
+    libnotify
     swayidle
     adw-gtk3
     glib
@@ -53,7 +54,11 @@ services.greetd = {
     playerctl
     brightnessctl
     wrapGAppsHook4
+    zathura
   ];
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   xdg.portal = {
     enable = true;
