@@ -44,6 +44,7 @@ services.greetd = {
     fuzzel
     swaylock
     mako
+    pwvucontrol
     libnotify
     swayidle
     adw-gtk3
