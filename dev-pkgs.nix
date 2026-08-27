@@ -11,7 +11,6 @@
   };
   environment.systemPackages = with pkgs; [
     opencode
-    unstable.zed-editor
     godot
     python315
     graphviz
@@ -35,6 +34,7 @@
     html-tidy
     stylelint
     tea
+    ldtk
   ];
   programs.direnv.enable = true;
 }
