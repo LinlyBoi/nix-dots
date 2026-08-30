@@ -6,6 +6,8 @@
 }:
 
 {
+  services.resolved.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
   services.tailscale.enable = true;
   networking.nftables.enable = true;
   networking.firewall = {
