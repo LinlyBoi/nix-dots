@@ -58,7 +58,7 @@
       obs-retro-effects
       input-overlay
       obs-aitum-multistream
-      obs-dvd-screensaver
+      # obs-dvd-screensaver
       obs-vertical-canvas
     ];
   };
