@@ -22,6 +22,7 @@
     "pnpm-9.15.9" # I hate this
   ];
   environment.systemPackages = with pkgs; [
+    concord
     vim
     wget
     ranger
