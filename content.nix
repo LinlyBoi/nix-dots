@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     obs-cmd
     kdePackages.kdenlive
-    davinci-resolve
+    # davinci-resolve
     reaper
     chatterino7
   ];
@@ -53,7 +53,7 @@
       obs-vkcapture
       obs-multi-rtmp
       advanced-scene-switcher
-      obs-replay-source
+      # obs-replay-source
       obs-websocket # for obs-cmd
       obs-retro-effects
       input-overlay
