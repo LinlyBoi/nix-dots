@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # 1. Install apple-cursor system-wide
@@ -20,7 +20,7 @@
       settings = {
         "org/gnome/desktop/interface" = {
           cursor-theme = "macOS";
-          cursor-size = 24;
+          cursor-size = lib.gvariant.mkInt32 24;
         };
       };
     }
