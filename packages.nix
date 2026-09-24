@@ -23,6 +23,7 @@
   ];
   environment.systemPackages = with pkgs; [
     concord
+    nautilus
     vim
     wget
     ranger

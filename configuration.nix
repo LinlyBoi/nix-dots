@@ -8,6 +8,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./apple-cursor.nix
     ./packages.nix
     ./emacs.nix
     ./laptop.nix
@@ -15,6 +16,7 @@
     ./tailscale.nix
   ];
 
+  # services.displayManager.gdm.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -81,6 +83,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
   };
 
