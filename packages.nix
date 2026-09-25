@@ -26,7 +26,8 @@
     nautilus
     vim
     wget
-    ranger
+    # ranger
+    yazi
     mpv
     ffmpeg
     adw-gtk3
