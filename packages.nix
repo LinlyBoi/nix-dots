@@ -36,14 +36,14 @@
     darkman
     nextcloud-talk-desktop
     hledger
-    supersonic aonsoku
+    supersonic unstable.nocturne
     libdrm
     yt-dlp
     freetube
     prismlauncher
     nextcloud-client
-    # discord-canary
-    vesktop
+    discord-canary
+    # vesktop
     firefox-gnome-theme
     chromium
     gimp
