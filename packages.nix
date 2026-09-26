@@ -42,8 +42,8 @@
     freetube
     prismlauncher
     nextcloud-client
-    discord-canary
-    # vesktop
+    # discord-canary
+    vesktop
     firefox-gnome-theme
     chromium
     gimp
