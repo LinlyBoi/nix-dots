@@ -41,6 +41,8 @@
     }
   ];
   services.pipewire.jack.enable = true;
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
   programs.obs-studio = {
     enable = true;
     package = pkgs.unstable.obs-studio;
