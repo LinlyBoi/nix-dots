@@ -38,6 +38,7 @@
     hledger
     supersonic unstable.nocturne
     libdrm
+    libnotify
     yt-dlp
     freetube
     prismlauncher
