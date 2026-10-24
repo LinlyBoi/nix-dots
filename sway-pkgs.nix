@@ -6,15 +6,15 @@
 }:
 
 {
-services.greetd = {                                                      
-  enable = true;                                                         
-  settings = {                                                           
-    default_session = {                                                  
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
-      user = "greeter";                                                  
-    };                                                                   
-  };                                                                     
-};
+  services.greetd = {                                                      
+    enable = true;                                                         
+    settings = {                                                           
+      default_session = {                                                  
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";                                                  
+      };                                                                   
+    };                                                                     
+  };
   services.gnome.gnome-keyring.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -32,8 +32,6 @@ services.greetd = {
     wezterm
     pwvucontrol
     playerctl
-    piper
-    logiops
   ];
   programs.sway = {
     enable = true;

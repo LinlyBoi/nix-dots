@@ -57,7 +57,7 @@
       advanced-scene-switcher
       # obs-replay-source
       obs-websocket # for obs-cmd
-      obs-retro-effects
+      # obs-retro-effects
       input-overlay
       obs-aitum-multistream
       # obs-dvd-screensaver

@@ -25,6 +25,8 @@
     concord
     nautilus
     wayscriber
+    piper
+    logiops
     vim
     wget
     # ranger
