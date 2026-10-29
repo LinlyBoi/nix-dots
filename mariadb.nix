@@ -8,7 +8,7 @@
     # Creates a DB user matching your Linux user, authenticated via unix socket
     ensureUsers = [
       {
-        name = "youruser"; # <- change to your username
+        name = "linly"; # <- change to your username
         ensurePermissions = {
           "*.*" = "ALL PRIVILEGES";
         };
@@ -16,6 +16,6 @@
     ];
   };
 
-  environment.systemPackages = [ pkgs.mysql-workbench ];
+  environment.systemPackages = with pkgs; [ dbeaver-bin php ];
 
 }
