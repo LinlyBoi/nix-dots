@@ -1,38 +1,25 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./packages.nix
-    ./emacs.nix
-    ./laptop-niri.nix
-    ./dev-pkgs.nix
-    ./tailscale.nix
-    ./apple-cursor.nix
-    ./mariadb.nix
-    #./content.nix
-    #./virtualbox.nix
-    #./vmware.nix
-  ];
+ hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+        intel-compute-runtime
+        intel-vaapi-driver
+        intel-media-driver
+    ];
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixpad"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   nix.gc = {
     automatic = true;
@@ -60,9 +47,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -88,8 +72,6 @@
       "wheel"
     ];
   };
-
-  # Install firefox.
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -127,26 +109,6 @@
   '';
   };
   users.defaultUserShell = pkgs.zsh;
-  services.tailscale.enable = true;
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
