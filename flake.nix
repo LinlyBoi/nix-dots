@@ -1,11 +1,5 @@
 {
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
-{
+  description = "My nix flake for my machines";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
