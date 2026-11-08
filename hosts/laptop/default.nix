@@ -1,18 +1,27 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
- hardware.graphics = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-        intel-compute-runtime
-        intel-vaapi-driver
-        intel-media-driver
+      intel-compute-runtime
+      intel-vaapi-driver
+      intel-media-driver
     ];
   };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  services.tlp.enable = true;
+  services.thermald.enable = true; # Intel CPUs only
+  powerManagement.enable = true;
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
@@ -104,9 +113,9 @@
     setOptions = [
       "HIST_IGNORE_ALL_DUPS"
     ];
-  interactiveShellInit = ''
-    source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-  '';
+    interactiveShellInit = ''
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    '';
   };
   users.defaultUserShell = pkgs.zsh;
   # This value determines the NixOS release from which the default
