@@ -7,12 +7,10 @@
 
 {
   # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import <unstable> {
-        config = config.nixpkgs.config;
-      };
+  nixpkgs.config.packageOverrides = pkgs: {
+    unstable = import inputs.nixpkgs-unstable {
+      system = pkgs.system;
+      config = config.nixpkgs.config;
     };
   };
   # List packages installed in system profile. To search, run:

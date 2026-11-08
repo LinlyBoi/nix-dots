@@ -8,15 +8,18 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./apple-cursor.nix
     ./packages.nix
     ./emacs.nix
-    ./laptop.nix
+    ./laptop-niri.nix
     ./dev-pkgs.nix
     ./tailscale.nix
+    ./apple-cursor.nix
+    ./mariadb.nix
+    #./content.nix
+    #./virtualbox.nix
+    #./vmware.nix
   ];
 
-  # services.displayManager.gdm.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -83,7 +86,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "audio"
     ];
   };
 
@@ -125,6 +127,7 @@
   '';
   };
   users.defaultUserShell = pkgs.zsh;
+  services.tailscale.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
