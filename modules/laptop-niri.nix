@@ -6,23 +6,15 @@
 }:
 
 {
- hardware.graphics = {
+  services.greetd = {
     enable = true;
-    extraPackages = with pkgs; [
-        intel-compute-runtime
-        intel-vaapi-driver
-        intel-media-driver
-    ];
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+        user = "greeter";
+      };
+    };
   };
-services.greetd = {                                                      
-  enable = true;                                                         
-  settings = {                                                           
-    default_session = {                                                  
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
-      user = "greeter";                                                  
-    };                                                                   
-  };                                                                     
-};
   security.pam.services.greetd.fprintAuth = false;
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
@@ -57,8 +49,6 @@ services.greetd = {
     wrapGAppsHook4
     zathura
   ];
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   xdg.portal = {
