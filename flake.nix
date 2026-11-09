@@ -26,13 +26,21 @@
         laptop = mkHost {
           hostname = "laptop";
           modules = [
-            ./modules/laptop-niri.nix
+            ./modules/niri.nix
+            ./modules/packages.nix
+            ./modules/emacs.nix
+            ./modules/apple-cursor.nix
+            ./modules/dev-pkgs.nix
+            ./modules/mariadb.nix
+            ./modules/tailscale.nix
           ];
         };
 
         desktop = mkHost {
           hostname = "desktop";
           modules = [
+            ./modules/niri.nix
+            ./modules/storage.nix
           ];
         };
 

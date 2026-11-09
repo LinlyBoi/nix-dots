@@ -15,6 +15,7 @@
     ];
   };
 
+  services.fprintd.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -69,9 +70,6 @@
     pulse.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.linly = {
     isNormalUser = true;
@@ -89,12 +87,6 @@
     "flakes"
   ];
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-    options = "caps:escape";
-  };
 
   programs.zsh = {
     enable = true;
